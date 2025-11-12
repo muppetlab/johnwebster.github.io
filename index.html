@@ -47,9 +47,26 @@
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
       }
-      .bg-fixed-custom {
-        background-attachment: fixed;
+      .parallax-bg {
+        position: relative;
+        overflow: hidden;
       }
+      .parallax-bg::before {
+        content: '';
+        position: absolute;
+        top: -20%; /* Extra height to prevent edges from showing */
+        left: 0;
+        right: 0;
+        bottom: -20%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        transform: translateY(var(--bg-scroll-y, 0px));
+        will-change: transform;
+      }
+      .parallax-bg.bg-image-1::before { background-image: url('1.jpg'); }
+      .parallax-bg.bg-image-2::before { background-image: url('2.jpg'); }
+      .parallax-bg.bg-image-4::before { background-image: url('4.jpg'); }
     </style>
     </head>
   <body class="bg-[#1a1511]">
@@ -88,7 +105,7 @@
       </div>
 
       <main>
-        <section id="home" class="h-screen flex items-center justify-center relative bg-cover bg-center bg-fixed-custom" style="background-image: url('1.jpg')">
+        <section id="home" class="h-screen flex items-center justify-center relative bg-cover bg-center parallax-bg bg-image-1">
           <div class="absolute inset-0 bg-black/70"></div>
           <div class="relative z-10 text-center text-white p-4">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4 text-shadow">
@@ -118,7 +135,7 @@
           </div>
         </section>
 
-        <section id="about" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('2.jpg')">
+        <section id="about" class="py-20 md:py-32 bg-cover bg-center relative parallax-bg bg-image-2">
           <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-5 gap-12 items-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
               <div class="md:col-span-3 text-stone-200">
@@ -193,7 +210,7 @@
           </div>
         </section>
         
-        <section id="contact" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('4.jpg')">
+        <section id="contact" class="py-20 md:py-32 bg-cover bg-center relative parallax-bg bg-image-4">
           <div class="container mx-auto px-6 max-w-3xl text-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
             <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 tracking-tight">
               Arrange a Consultation
@@ -273,6 +290,27 @@
             });
           });
         }
+
+        // --- PARALLAX EFFECT ---
+        const parallaxElements = document.querySelectorAll('.parallax-bg');
+        const parallaxSpeed = 0.3;
+
+        const updateParallax = () => {
+          const scrollY = window.scrollY;
+          for (const el of parallaxElements) {
+            const rect = el.getBoundingClientRect();
+            // Check if the element is in the viewport for performance
+            if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+              const elementTop = rect.top;
+              // Apply the transform with the desired speed
+              const translateY = -elementTop * parallaxSpeed;
+              el.style.setProperty('--bg-scroll-y', `${translateY}px`);
+            }
+          }
+        };
+
+        window.addEventListener('scroll', updateParallax, { passive: true });
+        updateParallax(); // Initial call to set position on load
       });
     </script>
     
