@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whisky Consultancy by John Webster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #1a1511;
+        color: #d6d3d1; /* stone-300 */
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px; /* Offset for the fixed header */
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+      }
+      /* Custom scrollbar for a modern look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1511; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ca8a04; /* amber-600 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #eab308; /* amber-500 */
+      }
+      /* Header scroll effect */
+      header.scrolled {
+        background-color: rgba(28, 21, 17, 0.8);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+      /* Background attachment for parallax effect */
+      .bg-fixed-custom {
+        background-attachment: fixed;
+      }
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#1a1511]">
+    <div id="root">
+      <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="#home" class="text-xl font-bold text-white tracking-wider hover:text-amber-500 transition-colors" style="font-family: 'Playfair Display', serif;">
+            JOHN WEBSTER
+          </a>
+          <nav class="hidden md:flex space-x-8">
+            <a href="#overview" class="text-stone-300 hover:text-amber-400 transition-colors duration-300 font-medium">Overview</a>
+            <a href="#about" class="text-stone-300 hover:text-amber-400 transition-colors duration-300 font-medium">About</a>
+            <a href="#services" class="text-stone-300 hover:text-amber-400 transition-colors duration-300 font-medium">Services</a>
+            <a href="#contact" class="text-stone-300 hover:text-amber-400 transition-colors duration-300 font-medium">Contact</a>
+          </nav>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="menu-btn" type="button" class="z-50 block text-stone-300 hover:text-amber-400 focus:text-amber-400 focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+              <svg id="menu-open-icon" class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <svg id="menu-close-icon" class="h-6 w-6 hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="fixed inset-0 z-40 flex-col items-center justify-center bg-[#1a1511] text-white transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <nav class="flex flex-col items-center space-y-8">
+          <a href="#overview" class="mobile-menu-link text-3xl font-bold hover:text-amber-400 transition-colors">Overview</a>
+          <a href="#about" class="mobile-menu-link text-3xl font-bold hover:text-amber-400 transition-colors">About</a>
+          <a href="#services" class="mobile-menu-link text-3xl font-bold hover:text-amber-400 transition-colors">Services</a>
+          <a href="#contact" class="mobile-menu-link text-3xl font-bold hover:text-amber-400 transition-colors">Contact</a>
+        </nav>
+      </div>
+
+      <main>
+        <!-- Hero Section -->
+        <section id="home" class="h-screen flex items-center justify-center relative bg-cover bg-center bg-fixed-custom" style="background-image: url('1.jpg')">
+          <div class="absolute inset-0 bg-black/70"></div>
+          <div class="relative z-10 text-center text-white p-4">
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8)">
+              John Webster
+            </h1>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8)">
+              Whisky Consultancy
+            </h1>
+            <p class="text-lg md:text-xl text-stone-200 max-w-3xl mx-auto font-light" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8)">
+              Leveraging profound industry insight to deliver bespoke solutions that maximise value and drive success in the dynamic world of Scotch whisky and beyond.
+            </p>
+          </div>
+          <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 animate-bounce">
+            <a href="#overview" aria-label="Scroll to overview">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="py-20 md:py-32 bg-[#1a1511]">
+          <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 tracking-tight">
+              Unparalleled Expertise in the World of Whisky
+            </h2>
+            <p class="text-lg md:text-xl text-stone-300 leading-relaxed">
+              John Webster provides expert, comprehensive whisky consultancy services, designed to elevate the knowledge, strategy, and operations of clients across the entire whisky spectrum. Whether you are a distillery seeking operational optimisation, a hospitality venue aiming to curate an award-winning menu, an investor requiring market intelligence, or a private collector in need of expert guidance, John leverages profound industry insight and technical expertise to deliver bespoke solutions that maximise value and drive success.
+            </p>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('2.jpg')">
+          <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-5 gap-12 items-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
+              <div class="md:col-span-3 text-stone-200">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 tracking-tight">
+                  About John Webster
+                </h2>
+                <div class="space-y-4 text-stone-300 leading-relaxed text-lg">
+                  <p>
+                    John Webster's journey into the heart of whisky began over two decades ago, not merely as a connoisseur, but as a dedicated student of its rich history and intricate craft. His philosophy is rooted in a profound respect for tradition, elegantly coupled with a keen eye for innovation.
+                  </p>
+                  <p>
+                    His mission is to help clients author their next chapter—be it launching a new expression, curating a world-class collection, or creating an unforgettable hospitality experience. His expertise transcends the technical; it is a passion for the spirit that he shares with every client.
+                  </p>
+                </div>
+              </div>
+              <div class="md:col-span-2 h-80 md:h-full w-full rounded-lg overflow-hidden shadow-lg order-first md:order-last">
+                <img src="3.jpg" alt="Portrait of John Webster" class="w-full h-full object-cover object-top" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 md:py-32 bg-[#1a1511]">
+          <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-4 tracking-tight">
+                A Suite of Expert Consultancy Services
+              </h2>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Service cards will be injected here by JavaScript -->
+            </div>
+          </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('4.jpg')">
+          <div class="container mx-auto px-6 max-w-3xl text-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
+            <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 tracking-tight">
+              Arrange a Consultation
+            </h2>
+            <p class="text-lg text-stone-300 mb-8 leading-relaxed">
+              To elevate your whisky enterprise or personal collection, please contact John Webster today for a private consultation and discover how expert guidance can bring your vision to fruition.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 text-xl">
+              <a href="mailto:john@edinbura.uk" class="text-stone-200 hover:text-amber-400 transition-colors">
+                john@edinbura.uk
+              </a>
+              <span class="text-stone-600 hidden sm:inline">|</span>
+              <a href="tel:+4400000000" class="text-stone-200 hover:text-amber-400 transition-colors">
+                +44 0000 0000
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-black/50 py-6">
+        <div class="container mx-auto px-6 text-center text-stone-500">
+          <p>&copy; <span id="current-year"></span> John Webster Whisky Consultancy. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- DATA FOR SERVICES ---
+        const iconClasses = "h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300";
+        const SERVICES_DATA = [
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+            title: "Distillery Operations & Strategy",
+            description: "Strategic guidance for distilleries, bottlers, and brands to optimise production processes, enhance efficiency, and navigate complex supply chains."
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.25a3.75 3.75 0 01-3.75 3.75H6.75A3.75 3.75 0 013 15.25V8.625c0-1.01.623-1.905 1.57-2.318l4.5-2.25a3.75 3.75 0 014.36 0l4.5 2.25c.947.413 1.57 1.308 1.57 2.318V15.25z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14.25v-2.25m0 0l-2.25-1.125M12 12l2.25-1.125" /></svg>`,
+            title: "Hospitality Programme Development",
+            description: "Curating unique and profitable whisky menus, delivering advanced staff training on product knowledge, and advising on superior cellar management."
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 7.5v6m3-3h-6" /></svg>`,
+            title: "Private Collection & Investment Advisory",
+            description: "Expert advice on sourcing rare and investment-grade whiskies, including valuation, authentication, and strategic acquisition and liquidation."
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.042.506.092.768.15l4.333 1.083c.254.063.49.196.688.374a2.252 2.252 0 01.659 1.591v5.714c0 .54-.224 1.054-.598 1.43l-4.5 4.5a2.25 2.25 0 01-3.182 0l-4.5-4.5A2.25 2.25 0 012.25 12V6.286c0-.54.224-1.054.598-1.43l4.5-4.5a2.25 2.25 0 013.182 0z" /></svg>`,
+            title: "Cask & Wood Management",
+            description: "Advising on cask selection, wood policy, maturation profiles, and finishing techniques to create exceptional new whisky expressions."
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>`,
+            title: "Sensory Analysis & Quality Control",
+            description: "Professional sensory evaluation to benchmark quality, assess new products, and implement rigorous quality control protocols."
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>`,
+            title: "Educational Workshops & Masterclasses",
+            description: "Bespoke training programmes and masterclasses for professionals and enthusiasts, covering whisky history, production, and advanced sensory skills."
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>`,
+            title: "Market Analysis & Forecasting",
+            description: "Data-driven insights into global and regional whisky markets, consumer trends, and competitive landscapes to inform critical business decisions."
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.34 15.84c-.688 0-1.25-.562-1.25-1.25s.562-1.25 1.25-1.25h3.32c.688 0 1.25.562 1.25 1.25s-.562 1.25-1.25 1.25h-3.32z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 110-18 9 9 0 010 18z" /></svg>`,
+            title: "Brand Strategy & Narrative Development",
+            description: "Developing compelling brand stories, refining product messaging, and devising effective consumer engagement and communication strategies."
+          }
+        ];
+
+        // --- RENDER SERVICE CARDS ---
+        const servicesGrid = document.getElementById('services-grid');
+        if (servicesGrid) {
+          SERVICES_DATA.forEach(service => {
+            const card = document.createElement('div');
+            card.className = "group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg";
+            card.innerHTML = `
+              ${service.icon}
+              <h3 class="text-xl font-bold text-stone-100 mb-3">${service.title}</h3>
+              <p class="text-stone-400 leading-relaxed flex-grow">${service.description}</p>
+            `;
+            servicesGrid.appendChild(card);
+          });
+        }
+
+        // --- HEADER SCROLL EFFECT ---
+        const header = document.querySelector('header');
+        if (header) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+              header.classList.add('scrolled');
+            } else {
+              header.classList.remove('scrolled');
+            }
+          });
+        }
+
+        // --- SET CURRENT YEAR IN FOOTER ---
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear().toString();
+        }
+        
+        // --- MOBILE MENU ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        if (menuBtn && mobileMenu && menuOpenIcon && menuCloseIcon) {
+          const toggleMenu = () => {
+            const isMenuOpen = mobileMenu.classList.contains('translate-x-0');
+            mobileMenu.classList.toggle('translate-x-0');
+            mobileMenu.classList.toggle('-translate-x-full');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', !isMenuOpen);
+            document.body.classList.toggle('overflow-hidden');
+          };
+
+          menuBtn.addEventListener('click', toggleMenu);
+
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              if (mobileMenu.classList.contains('translate-x-0')) {
+                toggleMenu();
+              }
+            });
+          });
+        }
+      });
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
