@@ -2,7 +2,6 @@
 <html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whisky Consultancy by John Webster</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,8 +46,7 @@
         background-attachment: fixed;
       }
     </style>
-  <link rel="stylesheet" href="/index.css">
-</head>
+    </head>
   <body class="bg-[#1a1511]">
     <div id="root">
       <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -62,7 +60,6 @@
             <a href="#services" class="text-stone-300 hover:text-amber-400 transition-colors duration-300 font-medium">Services</a>
             <a href="#contact" class="text-stone-300 hover:text-amber-400 transition-colors duration-300 font-medium">Contact</a>
           </nav>
-          <!-- Mobile Menu Button -->
           <div class="md:hidden">
             <button id="menu-btn" type="button" class="z-50 block text-stone-300 hover:text-amber-400 focus:text-amber-400 focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
               <svg id="menu-open-icon" class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +73,6 @@
         </div>
       </header>
       
-      <!-- Mobile Menu -->
       <div id="mobile-menu" class="fixed inset-0 z-40 flex-col items-center justify-center bg-[#1a1511] text-white transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
         <nav class="flex flex-col items-center space-y-8">
           <a href="#overview" class="mobile-menu-link text-3xl font-bold hover:text-amber-400 transition-colors">Overview</a>
@@ -87,7 +83,6 @@
       </div>
 
       <main>
-        <!-- Hero Section -->
         <section id="home" class="h-screen flex items-center justify-center relative bg-cover bg-center bg-fixed-custom" style="background-image: url('1.jpg')">
           <div class="absolute inset-0 bg-black/70"></div>
           <div class="relative z-10 text-center text-white p-4">
@@ -110,7 +105,6 @@
           </div>
         </section>
 
-        <!-- Overview Section -->
         <section id="overview" class="py-20 md:py-32 bg-[#1a1511]">
           <div class="container mx-auto px-6 max-w-4xl text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 tracking-tight">
@@ -122,7 +116,6 @@
           </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('2.jpg')">
           <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-5 gap-12 items-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
@@ -146,7 +139,6 @@
           </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="py-20 md:py-32 bg-[#1a1511]">
           <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -155,12 +147,10 @@
               </h2>
             </div>
             <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              <!-- Service cards will be injected here by JavaScript -->
-            </div>
+              </div>
           </div>
         </section>
         
-        <!-- Contact Section -->
         <section id="contact" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('4.jpg')">
           <div class="container mx-auto px-6 max-w-3xl text-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
             <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 tracking-tight">
@@ -190,6 +180,7 @@
     </div>
 
     <script>
+      // All this JavaScript will now work!
       document.addEventListener('DOMContentLoaded', function() {
         
         // --- DATA FOR SERVICES ---
@@ -253,6 +244,7 @@
         }
 
         // --- HEADER SCROLL EFFECT ---
+        // This will now work
         const header = document.querySelector('header');
         if (header) {
           window.addEventListener('scroll', () => {
@@ -271,6 +263,7 @@
         }
         
         // --- MOBILE MENU ---
+        // This will now work
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuOpenIcon = document.getElementById('menu-open-icon');
@@ -300,6 +293,6 @@
         }
       });
     </script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    
+    </body>
 </html>
