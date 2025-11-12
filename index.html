@@ -21,6 +21,12 @@
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Playfair Display', serif;
       }
+      .text-shadow {
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      }
+      .text-shadow-light {
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+      }
       /* Custom scrollbar for a modern look */
       ::-webkit-scrollbar {
         width: 8px;
@@ -41,17 +47,13 @@
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
       }
-      /* Background attachment for parallax effect */
-      .bg-fixed-custom {
-        background-attachment: fixed;
-      }
     </style>
     </head>
   <body class="bg-[#1a1511]">
     <div id="root">
       <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#home" class="text-xl font-bold text-white tracking-wider hover:text-amber-500 transition-colors" style="font-family: 'Playfair Display', serif;">
+          <a href="#home" class="text-xl font-bold text-white tracking-wider hover:text-amber-500 transition-colors">
             JOHN WEBSTER
           </a>
           <nav class="hidden md:flex space-x-8">
@@ -83,16 +85,13 @@
       </div>
 
       <main>
-        <section id="home" class="h-screen flex items-center justify-center relative bg-cover bg-center bg-fixed-custom" style="background-image: url('1.jpg')">
+        <section id="home" class="h-screen flex items-center justify-center relative bg-cover bg-center" style="background-image: url('1.jpg')">
           <div class="absolute inset-0 bg-black/70"></div>
           <div class="relative z-10 text-center text-white p-4">
-<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8)">
-              John Webster
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4 text-shadow">
+              John Webster<br>Whisky Consultancy
             </h1>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8)">
-              Whisky Consultancy
-            </h1>
-            <p class="text-lg md:text-xl text-stone-200 max-w-3xl mx-auto font-light" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8)">
+            <p class="text-lg md:text-xl text-stone-200 max-w-3xl mx-auto font-light text-shadow-light">
               Leveraging profound industry insight to deliver bespoke solutions that maximise value and drive success in the dynamic world of Scotch whisky and beyond.
             </p>
           </div>
@@ -116,7 +115,7 @@
           </div>
         </section>
 
-        <section id="about" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('2.jpg')">
+        <section id="about" class="py-20 md:py-32 bg-cover bg-center" style="background-image: url('2.jpg')">
           <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-5 gap-12 items-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
               <div class="md:col-span-3 text-stone-200">
@@ -133,7 +132,7 @@
                 </div>
               </div>
               <div class="md:col-span-2 h-80 md:h-full w-full rounded-lg overflow-hidden shadow-lg order-first md:order-last">
-                <img src="3.jpg" alt="Portrait of John Webster" class="w-full h-full object-cover object-top" />
+                <img src="3.jpg" alt="Portrait of John Webster" class="w-full h-full object-cover object-top" loading="lazy" />
               </div>
             </div>
           </div>
@@ -147,11 +146,51 @@
               </h2>
             </div>
             <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Distillery Operations & Strategy</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Strategic guidance for distilleries, bottlers, and brands to optimise production processes, enhance efficiency, and navigate complex supply chains.</p>
               </div>
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.25a3.75 3.75 0 01-3.75 3.75H6.75A3.75 3.75 0 013 15.25V8.625c0-1.01.623-1.905 1.57-2.318l4.5-2.25a3.75 3.75 0 014.36 0l4.5 2.25c.947.413 1.57 1.308 1.57 2.318V15.25z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14.25v-2.25m0 0l-2.25-1.125M12 12l2.25-1.125" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Hospitality Programme Development</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Curating unique and profitable whisky menus, delivering advanced staff training on product knowledge, and advising on superior cellar management.</p>
+              </div>
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 7.5v6m3-3h-6" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Private Collection & Investment Advisory</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Expert advice on sourcing rare and investment-grade whiskies, including valuation, authentication, and strategic acquisition and liquidation.</p>
+              </div>
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.042.506.092.768.15l4.333 1.083c.254.063.49.196.688.374a2.252 2.252 0 01.659 1.591v5.714c0 .54-.224 1.054-.598 1.43l-4.5 4.5a2.25 2.25 0 01-3.182 0l-4.5-4.5A2.25 2.25 0 012.25 12V6.286c0-.54.224-1.054.598-1.43l4.5-4.5a2.25 2.25 0 013.182 0z" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Cask & Wood Management</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Advising on cask selection, wood policy, maturation profiles, and finishing techniques to create exceptional new whisky expressions.</p>
+              </div>
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Sensory Analysis & Quality Control</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Professional sensory evaluation to benchmark quality, assess new products, and implement rigorous quality control protocols.</p>
+              </div>
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Educational Workshops & Masterclasses</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Bespoke training programmes and masterclasses for professionals and enthusiasts, covering whisky history, production, and advanced sensory skills.</p>
+              </div>
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Market Analysis & Forecasting</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Data-driven insights into global and regional whisky markets, consumer trends, and competitive landscapes to inform critical business decisions.</p>
+              </div>
+              <div class="group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.34 15.84c-.688 0-1.25-.562-1.25-1.25s.562-1.25 1.25-1.25h3.32c.688 0 1.25.562 1.25 1.25s-.562 1.25-1.25 1.25h-3.32z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 110-18 9 9 0 010 18z" /></svg>
+                <h3 class="text-xl font-bold text-stone-100 mb-3">Brand Strategy & Narrative Development</h3>
+                <p class="text-stone-400 leading-relaxed flex-grow">Developing compelling brand stories, refining product messaging, and devising effective consumer engagement and communication strategies.</p>
+              </div>
+            </div>
           </div>
         </section>
         
-        <section id="contact" class="py-20 md:py-32 bg-cover bg-center bg-fixed-custom" style="background-image: url('4.jpg')">
+        <section id="contact" class="py-20 md:py-32 bg-cover bg-center" style="background-image: url('4.jpg')">
           <div class="container mx-auto px-6 max-w-3xl text-center bg-[#1a1511]/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl shadow-black/30">
             <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 tracking-tight">
               Arrange a Consultation
@@ -183,66 +222,6 @@
       // All this JavaScript will now work!
       document.addEventListener('DOMContentLoaded', function() {
         
-        // --- DATA FOR SERVICES ---
-        const iconClasses = "h-12 w-12 text-amber-400 mb-4 group-hover:text-amber-300 transition-colors duration-300";
-        const SERVICES_DATA = [
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
-            title: "Distillery Operations & Strategy",
-            description: "Strategic guidance for distilleries, bottlers, and brands to optimise production processes, enhance efficiency, and navigate complex supply chains."
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.25a3.75 3.75 0 01-3.75 3.75H6.75A3.75 3.75 0 013 15.25V8.625c0-1.01.623-1.905 1.57-2.318l4.5-2.25a3.75 3.75 0 014.36 0l4.5 2.25c.947.413 1.57 1.308 1.57 2.318V15.25z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14.25v-2.25m0 0l-2.25-1.125M12 12l2.25-1.125" /></svg>`,
-            title: "Hospitality Programme Development",
-            description: "Curating unique and profitable whisky menus, delivering advanced staff training on product knowledge, and advising on superior cellar management."
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 7.5v6m3-3h-6" /></svg>`,
-            title: "Private Collection & Investment Advisory",
-            description: "Expert advice on sourcing rare and investment-grade whiskies, including valuation, authentication, and strategic acquisition and liquidation."
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.042.506.092.768.15l4.333 1.083c.254.063.49.196.688.374a2.252 2.252 0 01.659 1.591v5.714c0 .54-.224 1.054-.598 1.43l-4.5 4.5a2.25 2.25 0 01-3.182 0l-4.5-4.5A2.25 2.25 0 012.25 12V6.286c0-.54.224-1.054.598-1.43l4.5-4.5a2.25 2.25 0 013.182 0z" /></svg>`,
-            title: "Cask & Wood Management",
-            description: "Advising on cask selection, wood policy, maturation profiles, and finishing techniques to create exceptional new whisky expressions."
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>`,
-            title: "Sensory Analysis & Quality Control",
-            description: "Professional sensory evaluation to benchmark quality, assess new products, and implement rigorous quality control protocols."
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>`,
-            title: "Educational Workshops & Masterclasses",
-            description: "Bespoke training programmes and masterclasses for professionals and enthusiasts, covering whisky history, production, and advanced sensory skills."
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>`,
-            title: "Market Analysis & Forecasting",
-            description: "Data-driven insights into global and regional whisky markets, consumer trends, and competitive landscapes to inform critical business decisions."
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="${iconClasses}" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.34 15.84c-.688 0-1.25-.562-1.25-1.25s.562-1.25 1.25-1.25h3.32c.688 0 1.25.562 1.25 1.25s-.562 1.25-1.25 1.25h-3.32z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 110-18 9 9 0 010 18z" /></svg>`,
-            title: "Brand Strategy & Narrative Development",
-            description: "Developing compelling brand stories, refining product messaging, and devising effective consumer engagement and communication strategies."
-          }
-        ];
-
-        // --- RENDER SERVICE CARDS ---
-        const servicesGrid = document.getElementById('services-grid');
-        if (servicesGrid) {
-          SERVICES_DATA.forEach(service => {
-            const card = document.createElement('div');
-            card.className = "group bg-stone-900/50 p-8 rounded-lg border border-stone-800 hover:border-amber-600/50 hover:bg-stone-900/80 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center shadow-lg";
-            card.innerHTML = `
-              ${service.icon}
-              <h3 class="text-xl font-bold text-stone-100 mb-3">${service.title}</h3>
-              <p class="text-stone-400 leading-relaxed flex-grow">${service.description}</p>
-            `;
-            servicesGrid.appendChild(card);
-          });
-        }
-
         // --- HEADER SCROLL EFFECT ---
         // This will now work
         const header = document.querySelector('header');
